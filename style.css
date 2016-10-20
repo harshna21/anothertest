@@ -1,13 +1,14 @@
 html,body{
 	margin: 0px;
+        margin-left:20%;
 	padding: 0px;
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: "Open Sans", sans-serif;
 }
 h2{
 	margin: 50px 20px 0;
 	color: #848484;
 	padding: 0;
-	font: 1.5em "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font: 1.5em "Ubuntu", sans-serif;
 }
 .upload-wrapper {
     //max-width: 600px;
@@ -68,7 +69,7 @@ h2{
     border-radius: 2px;
     display: inline-block;
     color: #fff;
-    font-size: 0.8em;    
+    font-size: 16px;    
 	margin-left: 2px;
 }
 .button:hover{
@@ -104,7 +105,7 @@ h2{
     -webkit-box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.04);
     -moz-box-box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.04);
     border: 1px solid #CECECE;
-	min-height:60px;
+	min-height:80px;
 }
 .file-row video{
     width:100%;
