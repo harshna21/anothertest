@@ -1,0 +1,65 @@
+<html>
+<head>
+<style>
+.files {
+    margin-top: 15px;
+    width: 450px;
+    margin-left: 15px;
+	list-style: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.file-wrapper {
+ width:355px;
+ margin-bottom: 15px;
+}
+
+.file-row {
+ display: flex;
+ flex-direction: row;
+}
+
+.file-row-text {
+	display: flex;
+    flex-direction: column;
+}
+
+.file-row-text button {
+	margin-top:15px;
+}
+
+canvas {
+	border:1px solid black;
+	margin-right:15px;
+}
+</style>
+</head>
+<body>
+<ul id="files" class="files">
+	<li class="file-wrapper">
+		<div class="file-row">
+			<canvas width="80" height="80" id="myCanvas"></canvas>
+			<div class="file-row-text">
+				<label for="filename">Title: </label>
+				<input type="text" name="filename" value="DTeal_Trimark Down Tick"/>
+				<button class="button btn-red remove">Remove</button>
+			</div>
+		</div>
+	</li>
+	<li class="file-wrapper">
+		<div class="file-row">
+			<canvas width="80" height="80"></canvas>
+			<div class="file-row-text">
+				<label for="filename">Title: </label>
+				<input type="text" name="filename" value="DTeal_Trimark Wheel">
+				<button class="button btn-red remove">Remove</button>
+			</div>
+		</div>
+	</li>
+</ul>
+</body>
+</html>
