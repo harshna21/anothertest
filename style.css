@@ -101,10 +101,10 @@ h2{
     //background-color: #DCDCDC;
     margin-top: 5px;
     margin-bottom: 5px;
-    box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.04);
-    -webkit-box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.04);
-    -moz-box-box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.04);
-    border: 1px solid #CECECE;
+    //box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.04);
+    //-webkit-box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.04);
+    //-moz-box-box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid #CECECE;
 	min-height:80px;
 }
 .file-row video{
@@ -114,7 +114,7 @@ h2{
     width:100%;
 }
 .file-row .file-row-text{
-	text-align:right;
+	//text-align:right;
 }
 .file-row .file-remove{
     float: right;
@@ -185,10 +185,27 @@ h2{
 }
 
 .file-wrapper {
- width:250px;
+ width:355px;
 }
 
 .savebutton {
   margin-left:15px;	
   margin-top:15px;
 }
+
+input {
+    margin-bottom: 15px;
+    margin-left: 5px;
+    //width: 193px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+ul {
+ list-style: none;
+margin-left: -35px;
+}
+

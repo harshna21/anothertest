@@ -12,7 +12,7 @@
 <div id="error_output"></div>
     
     <!-- The container for the uploaded files -->
-    <div id="files" class="files"></div>
+    <ul id="files" class="files"></ul>
 	<div class="thebutton">
         <span class="button btn-blue input-file">
             Add Files <input id="fileupload" type="file" name="files[]" multiple>
@@ -42,8 +42,6 @@
 <script src="js/jquery.fileupload-process.js"></script>
 <!-- The File Upload image preview & resize plugin -->
 <script src="js/jquery.fileupload-image.js"></script>
-<script src="js/jquery.fileupload-video.js"></script>
-<script src="js/jquery.fileupload-audio.js"></script>
 <script src="js/jquery.fileupload-validate.js"></script>
 <script language="javascript">
 $(function(){
@@ -74,29 +72,32 @@ $(function(){
 		// send Blob objects via XHR requests:
 		disableImageResize: /Android(?!.*Chrome)|Opera/ 
 		.test(window.navigator.userAgent),
-		previewMaxWidth: 50,
-		previewMaxHeight: 50,
+		previewMaxWidth: 80,
+		previewMaxHeight: 80,
 		previewCrop: true,
 		dropZone: $('#dropzone')
 	});
 	
 	fi.on('fileuploadadd', function (e, data) {
-			data.context = $('<div/>').addClass('file-wrapper').appendTo('#files');
+			data.context = $('<li/>').addClass('file-wrapper').appendTo('#files');
 			$.each(data.files, function (index, file){	
 			var node = $('<div/>').addClass('file-row');
+			var previewDiv = $('<div>').addClass('thepreview');
 			var removeBtn  = $('<button/>').addClass('button btn-red remove').text('Remove');
 			removeBtn.on('click', function(e, data){
 				$(this).parent().parent().remove();
 			});
-			
-			var file_txt = $('<div/>').addClass('file-row-text').append('<span>'+file.name + ' (' +format_size(file.size) + ')' + '</span>');
-			
+			var thefilename= file.name.substr(0, file.name.lastIndexOf('.')) || file.name;
+            var extension = file.name.substr( (file.name.lastIndexOf('.') +1) );
+            var size= thefilename.length+1;
+			var file_txt = $('<div/>').addClass('file-row-text').append('<label for="filename">Title: </label><input type="text" name="filename" value="'+thefilename+'"></input>');
 			file_txt.append(removeBtn);
-			file_txt.prependTo(node).append(uploadButton.clone(true).data(data));
-			progressBar.clone().appendTo(file_txt);
+			//file_txt.prependTo(node).append(uploadButton.clone(true).data(data));
+			//progressBar.clone().appendTo(file_txt);
 			if (!index){
 				node.prepend(file.preview);
 			}
+			node.append(file_txt);
 			
 			node.appendTo(data.context);
 		});
